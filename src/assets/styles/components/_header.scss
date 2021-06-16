@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    padding: 0 10%;
+    background-color: $color-bluedark;
+    width: 100%;
+    height: 80px;
+}
+.header__logo {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.header__info {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+}
+.header__user {
+    display: flex;
+    align-items: center;
+    img {
+        width: 40px;
+        height: 40px;        
+        border-radius: 50%;
+    }
+    p {
+        margin-left: 10px;
+        color: $color-white;
+
+    }
+}
+
+.header__logout {
+    padding-left: 35px;
+}
+
+
+@media screen and (max-width: 430px) {
+    .header__user p {
+        display: none;
+    }
+
+    .header__logout {
+        padding-left: 15px;
+    }
+    
+}
