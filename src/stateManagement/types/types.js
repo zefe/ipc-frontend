@@ -1,0 +1,7 @@
+export const types= {
+
+    IPC_LIST_LOADING: 'IPC_LIST_LOADING',
+    IPC_LIST_SUCCESS: 'IPC_LIST_SUCCESS',
+    IPC_LIST_FAIL: 'IPC_LIST_FAIL',
+    
+}

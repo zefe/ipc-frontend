@@ -6,10 +6,10 @@ import { Header } from '../Components/Layout/Header';
 
 export const HomeView = () => {
     return (
-        <div>
+        <div className="home">
             <Header />
-            <ChartIpc />
-            
+            <h1>Dashboard</h1>
+            <ChartIpc />            
         </div>
     )
 }

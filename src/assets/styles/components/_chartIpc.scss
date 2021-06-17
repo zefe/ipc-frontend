@@ -9,7 +9,7 @@
     width: 80%;
     background-color: $color-white;
     border-radius: 5px;
-    h1 {
+    h2 {
         font-size: 1.2rem;
         margin-bottom: 50px;
         color: $color-gray;
@@ -28,7 +28,7 @@
 /* hiding first and last lines in cartesian grid */
 .recharts-wrapper .recharts-cartesian-grid-horizontal line:first-child,
 .recharts-wrapper .recharts-cartesian-grid-horizontal line:last-child {
-stroke-opacity: 0;
+    stroke-opacity: 0;
 }
   
 p {
