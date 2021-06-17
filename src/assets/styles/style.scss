@@ -5,9 +5,11 @@
 @import "base/global";
 @import "base/typography";
 
+// Views
+@import "views/homeView";
+@import "views/loginView";
+
 // Components
 @import "components/header";
 @import "components/chartIpc";
-
-// Views
-@import "views/homeView";
+@import "components/common/loading";

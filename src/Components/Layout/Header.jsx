@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as Logo }  from '../../assets/images/logo.svg';
 import { ReactComponent as IconLogout }  from '../../assets/icons/icon-logout.svg';
 import person from '../../assets/images/person.jpg';
@@ -7,7 +8,9 @@ export const Header = () => {
     return (
         <header className="header">
             <div className="header__logo">
-                <Logo />
+                <Link to="/">
+                    <Logo />
+                </Link >
             </div>
             <div className="header__info">
                 <div className="header__user">

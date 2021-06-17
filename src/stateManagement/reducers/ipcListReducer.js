@@ -8,19 +8,19 @@ const initialState = {
 
 export const ipcListReducer = ( state=initialState, action) => {
     switch (action.type) {
-        case types.IPC_LIST_LOADING:
+        case types.ipcListLoading:
             return {
                 ...state,
                 loading: true,
                 errorMessage: ''
             }
-        case types.IPC_LIST_FAIL:
+        case types.ipcListFail:
             return {
                 ...state,
                 loading: false,
                 errorMessage: 'Something went wrong, contact support'
             }
-        case types.IPC_LIST_SUCCESS:
+        case types.ipcListSuccess:
             return {
                 ...state,
                 loading: false,

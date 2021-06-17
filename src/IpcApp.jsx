@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './stateManagement/store/store';
-import { HomeView } from './views/HomeView';
+import { AppRouter } from './routes/AppRouter';
 
 
 export const IpcApp = () => {
     return (
         <Provider store={ store } >
-            <HomeView />
+            <AppRouter />
         </Provider>
     )
 }

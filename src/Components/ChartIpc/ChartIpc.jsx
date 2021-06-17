@@ -55,7 +55,7 @@ export const ChartIpc = () => {
 
                         <XAxis
                             dataKey="date"
-                            tickLine={false}                            
+                            tickLine={false}               
                             tickFormatter={ (str) => {
                                 const strDate = new Date(str);
                                 return format(strDate, "hh:mm aaaa");

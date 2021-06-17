@@ -1,7 +1,18 @@
 export const types= {
 
-    IPC_LIST_LOADING: 'IPC_LIST_LOADING',
-    IPC_LIST_SUCCESS: 'IPC_LIST_SUCCESS',
-    IPC_LIST_FAIL: 'IPC_LIST_FAIL',
+    ipcListLoading: '[ipc] Ipc List Loading',
+    ipcListSuccess: '[ipc] Ipc List Success',
+    ipcListFail: '[ipc] Customer List Fail',
+
+    authCheckingFinish: '[auth] Finish Checking login state',
+    authStartLogin: '[auth] Start login ',
+    authLogin: '[auth] Login',
+
+    errorMessage: '[auth] Error',
+    errorsMessages: '[auth] All Errors',
+
+    authStartRegister: '[auth] Start Register',
+    authStartTokenRenew: '[auth] Start Token Renew',
+    authLogout: '[auth] Logout',
     
 }

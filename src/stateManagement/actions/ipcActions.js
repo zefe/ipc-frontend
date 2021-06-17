@@ -9,13 +9,13 @@ export const getIpcList = () => {
         try{
 
             dispatch({
-                type: types.IPC_LIST_LOADING
+                type: types.ipcListLoading
             });
 
             const res = await axios.get(URL_API_IPC);
 
             dispatch({
-                type: types.IPC_LIST_SUCCESS,
+                type: types.ipcListSuccess,
                 payload: res.data
             });
 
@@ -23,7 +23,7 @@ export const getIpcList = () => {
         }
         catch(e){
             dispatch({
-                type: types.IPC_LIST_FAIL
+                type: types.ipcListFail
             });
             console.log(e);
         }
