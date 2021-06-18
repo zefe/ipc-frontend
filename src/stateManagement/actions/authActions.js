@@ -16,6 +16,7 @@ export const startLogin = (email, password, history) => {
 
                 localStorage.setItem('token', body.token)
                 localStorage.setItem('token-init-date', new Date().getTime() );
+                localStorage.setItem('oauth', false );
 
                 dispatch( login({
                     uid: body.uid,
@@ -46,10 +47,38 @@ export const startLogin = (email, password, history) => {
     }
 }
 
+export const startLoginWithGoogle = (response, history) => {
+    return async( dispatch ) => {
+
+        try{
+            const user = response.profileObj;
+            const token = response.accessToken;
+
+            localStorage.setItem('token', token);
+            localStorage.setItem('uid', user.googleId );
+            localStorage.setItem('oauth', true );
+            localStorage.setItem('name', user.name );
+            localStorage.setItem('imageUrl', user.imageUrl);
+
+
+            dispatch( login({
+                uid: user.googleId,
+                name: user.name,
+            }))
+            
+            dispatch( cleanSpecificErrorMessage() );
+            dispatch( cleanErrorMessages() );
+
+        }
+        catch(e){
+            console.log(e)
+        }
+    }
+}
+
 
 export const startSignUp = (name, email, password, history) => {
     return async( dispatch ) => {
-
 
         try{
             const res =  await authService.signup({name, email, password})
@@ -89,6 +118,7 @@ export const startSignUp = (name, email, password, history) => {
             } else {
 
                 let errors = e.response.data.errors;
+                console.log(e.response)
                 let messages = errorMessages(errors, e)
     
                 dispatch({
@@ -128,10 +158,33 @@ export const startChecking = () => {
             } 
 
         }
-        catch(e){
-            
+        catch(e){            
             dispatch( checkingFinish() );
-            //console.log(e.response);
+        }
+    }
+}
+
+export const startCheckingGoogle = () => {
+    return async( dispatch ) => {
+
+        try{
+
+            let token = localStorage.getItem('token') || '';
+            let uid = localStorage.getItem('uid') || '';
+            let oauth = localStorage.getItem('oauth') || '';
+
+            localStorage.setItem('token', token)
+            localStorage.setItem('uid', uid)
+            localStorage.setItem('oauth', oauth)
+
+            dispatch( login({
+                uid: uid,
+                oauth: oauth
+            }))
+
+        }
+        catch(e){            
+            dispatch( checkingFinish() );
         }
     }
 }

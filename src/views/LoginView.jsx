@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { GoogleLogin } from 'react-google-login';
 
-import { startLogin } from '../stateManagement/actions/authActions';
+import { startLogin, startLoginWithGoogle } from '../stateManagement/actions/authActions';
 import { useForm } from '../Hooks/useForm';
+import { clientId } from '../config/google';
 
 import { ReactComponent as Logo }  from '../assets/images/logo.svg';
-
 
 
 export const LoginView = (props) => {
@@ -30,6 +31,10 @@ export const LoginView = (props) => {
         const { history } = props;
 
         dispatch(startLogin(email, password, history));
+    }
+
+    const responseGoogle = (response) => {
+        dispatch(startLoginWithGoogle(response))
     }
 
     return (
@@ -68,6 +73,15 @@ export const LoginView = (props) => {
                 </div>
                 <div className="form-button">
                     <button className="btn-primary">Log in</button>
+                    <p>Or</p>
+                    <GoogleLogin
+                        clientId={clientId}
+                        buttonText="Log in with Google"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                        className="btn-google"
+                    />
                 </div>
                 <div className="form-link">
                     <span>Don't have an Account?</span> <Link to="/signup">Get started</Link>

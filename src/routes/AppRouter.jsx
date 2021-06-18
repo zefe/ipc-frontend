@@ -2,7 +2,7 @@ import { React, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
-import { startChecking } from '../stateManagement/actions/authActions';
+import { startChecking, startCheckingGoogle } from '../stateManagement/actions/authActions';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
 
@@ -11,23 +11,31 @@ import { SignUpView } from '../views/SignupView';
 import { HomeView } from '../views/HomeView';
 import { Loading } from '../Components/Common/Loading';
 
-
-
 export const AppRouter = () => {
 
     const dispatch = useDispatch();
-    const { checking , uid } = useSelector( state => state.auth)
+    const { checking , uid } = useSelector( state => state.auth);
+
+    let oauthGoogle = localStorage.getItem('oauth') || '';
+    
+    const verifyProviderAuth = () => {
+        if(oauthGoogle === 'true') {
+            dispatch( startCheckingGoogle() )
+        } else {
+            dispatch( startChecking() )
+        }
+    }
+
 
     useEffect(() => {
-        dispatch( startChecking() )
-    }, [dispatch])
+        verifyProviderAuth()
+    }, [])
     
     if( checking ) {
         return(
             <Loading />
         )
-    }
-
+    } 
 
     return (
         <Router>

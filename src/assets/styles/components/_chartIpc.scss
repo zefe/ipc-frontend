@@ -42,3 +42,14 @@ h3 {
     font-weight: 500;
     font-size: 16px;
 }
+
+@media screen and (max-width: 430px) {
+    .chart__container {
+        padding: 15px 15px;
+        width: 95%;
+        h2 {
+            font-size: 1rem;
+        }
+    }
+    
+}

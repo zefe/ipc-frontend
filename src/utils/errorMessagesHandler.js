@@ -1,6 +1,6 @@
 /*
     Funcion maneja los errores del formulario de registro, recibe 2 parametros el primero es @errors
-    es el objeto que contiene las validaciones que no pasaron en el backend
+    es el objeto que contiene los errores que no regresa en el backend
     ejem:
     email: {
         location: "body",
@@ -8,7 +8,7 @@
         param: "Email"
     }
     El segundo para metro @e es el objeto que retorna el Request, headers,status, data etc.
-    Se utiliza para verificar el tipo de error y asi retornar solo los errores que nos envie la
+    Se utiliza para verificar el tipo de error y asi retornar solo los errores de los campos que nos envie la
     solicitud.
 
 */
