@@ -11,14 +11,15 @@ import {
     CartesianGrid,
   } from "recharts";
 import { format } from "date-fns";
-import { es } from 'date-fns/locale';
+import { es, enUS } from 'date-fns/locale';
+import { Loading } from '../Common/Loading';
 
 const  CustomTooltip = ({ active, payload, label }) =>  {    
     if (active) {
       return (
         <div className="custom-tooltip">
             <h3>${payload[0].value} </h3>
-            <p>{format(new Date(label), 'd MMM, yyyy', { locale: es })} </p>
+            <p>{format(new Date(label), 'd MMM, yyyy', { locale: enUS })} </p>
         </div>
       );
     }
@@ -39,9 +40,9 @@ export const ChartIpc = () => {
     return (
         <section className="chart">
             {
-                loading ? <h1>Loading</h1> :
+                 loading ? <Loading /> :
             <div className="chart__container">
-                <h2>Índice de Precios y Cotizaciones </h2>
+                <h2>Prices and Quotations Index</h2>
                 <ResponsiveContainer width="100%" height={400}>
                     <AreaChart data={ data }>
                         <defs>

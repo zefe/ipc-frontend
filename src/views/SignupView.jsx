@@ -75,10 +75,10 @@ export const SignUpView = (props) => {
                     <small style={{color:'red'}}>{passError}</small>
                 </div>
                 <div className="form-button">
-                    <button className="btn-primary">Crear cuenta</button>
+                    <button className="btn-primary">Create account</button>
                 </div>
                 <div className="form-link">
-                    <span>¿Ya tienes una cuenta?</span> <Link to="/signin">Iniciar sesión</Link>
+                    <span>Already have an account?</span> <Link to="/signin">Log in</Link>
                 </div>
             </form>
         </div>

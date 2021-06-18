@@ -67,10 +67,10 @@ export const LoginView = (props) => {
                     />
                 </div>
                 <div className="form-button">
-                    <button className="btn-primary">Iniciar sesión</button>
+                    <button className="btn-primary">Log in</button>
                 </div>
                 <div className="form-link">
-                    <span>¿No tienes una cuenta?</span> <Link to="/signup">Registrate</Link>
+                    <span>Don't have an Account?</span> <Link to="/signup">Get started</Link>
                 </div>
             </form>
         </div>
