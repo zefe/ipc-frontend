@@ -1,0 +1,19 @@
+.home {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        padding-top: 4%;
+        padding-left: 10%;
+        padding-right: 10%;
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .home h1 {
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+    
+}
