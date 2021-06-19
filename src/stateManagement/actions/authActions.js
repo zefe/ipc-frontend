@@ -20,7 +20,8 @@ export const startLogin = (email, password, history) => {
 
                 dispatch( login({
                     uid: body.uid,
-                    name: body.name
+                    name: body.name,
+                    role: 'admin'
                 }))
                 
                 dispatch( cleanSpecificErrorMessage() );

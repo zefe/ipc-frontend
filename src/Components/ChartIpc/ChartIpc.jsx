@@ -11,20 +11,9 @@ import {
     CartesianGrid,
   } from "recharts";
 import { format } from "date-fns";
-import { es, enUS } from 'date-fns/locale';
 import { Loading } from '../Common/Loading';
+import { CustomTooltip } from '../CustomToolTip/CustomToolTip';
 
-const  CustomTooltip = ({ active, payload, label }) =>  {    
-    if (active) {
-      return (
-        <div className="custom-tooltip">
-            <h3>${payload[0].value} </h3>
-            <p>{format(new Date(label), 'd MMM, yyyy', { locale: enUS })} </p>
-        </div>
-      );
-    }
-    return null;
-}
 
 
 export const ChartIpc = () => {
