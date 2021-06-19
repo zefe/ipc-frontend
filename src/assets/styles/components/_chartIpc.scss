@@ -71,5 +71,14 @@ h3 {
     tspan {
         font-size: 12px;
     }
+
+    .chart__button-group {
+        button {
+            margin: 1px;
+            padding: 5px 4px;
+            width: auto;
+            font-size: 12px;
+        }
+    }
     
 }

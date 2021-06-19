@@ -25,7 +25,7 @@ export const ChartIpc = () => {
     
     useEffect(() => {
         dispatch(getIpcList());
-    }, []) 
+    }, [dispatch]) 
 
     return (
         <section className="chart">

@@ -52,7 +52,6 @@ export const startLoginWithGoogle = (response, history) => {
     return async( dispatch ) => {
 
         try{
-            console.log(response)
             const user = response.profileObj;
             const token = response.accessToken;
 
@@ -70,8 +69,6 @@ export const startLoginWithGoogle = (response, history) => {
             
             dispatch( cleanSpecificErrorMessage() );
             dispatch( cleanErrorMessages() );
-
-            history.push('/');
 
         }
         catch(e){
