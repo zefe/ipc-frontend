@@ -1,0 +1,75 @@
+.chart {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+}
+.chart__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.chart__button-group {
+    button {
+        margin: 0 3px;
+        background-color: $button-color;
+        border: none;
+        color: $color-black;
+        padding: 5px 8px;
+        width: 100px;
+    }
+}
+.chart__container {
+    padding: 50px 50px;
+    width: 80%;
+    background-color: $color-white;
+    border-radius: 5px;
+    h2 {
+        font-size: 1.2rem;
+        color: $color-gray;
+    }
+}
+
+
+.custom-tooltip {
+    border-radius: 0.25rem;
+    background: #00a07d;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+  
+/* hiding first and last lines in cartesian grid */
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:first-child,
+.recharts-wrapper .recharts-cartesian-grid-horizontal line:last-child {
+    stroke-opacity: 0;
+}
+  
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: $color-lightblue;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 430px) {
+    .chart__container {
+        padding: 15px 15px;
+        width: 95%;
+        h2 {
+            font-size: 1rem;
+        }
+    }
+
+    tspan {
+        font-size: 12px;
+    }
+    
+}
