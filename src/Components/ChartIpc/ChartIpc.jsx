@@ -47,8 +47,8 @@ export const ChartIpc = () => {
                     <AreaChart data={ data }>
                         <defs>
                         <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#00A877" stopOpacity={0.5} />
-                            <stop offset="75%" stopColor="#00A877" stopOpacity={0.05} />
+                            <stop offset="5%" stopColor="#00A877" stopOpacity={0.5} />
+                            <stop offset="95%" stopColor="#00A877" stopOpacity={0.05} />
                         </linearGradient>
                         </defs>
 
@@ -68,7 +68,19 @@ export const ChartIpc = () => {
                         datakey="price"
                         tickLine={false}
                         tickCount={8}
-                        tickFormatter={(number) => `$${number.toFixed(2)}`}
+                        tickFormatter={(number) => {
+                            const price = number.toLocaleString(
+                                'es-MX',
+                                {
+                                    style: 'currency',
+                                    currency: 'MXN'
+
+                                }
+                            )
+                            return price;
+                        }}
+                        width={80}
+                        allowDecimals={false}
                         />
 
                         <Tooltip content={<CustomTooltip />} />
