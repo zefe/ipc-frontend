@@ -4,6 +4,23 @@
     width: 100%;
     margin-top: 5%;
 }
+.chart__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.chart__button-group {
+    button {
+        margin: 0 3px;
+        background-color: $button-color;
+        border: none;
+        color: $color-black;
+        padding: 5px 8px;
+        width: 100px;
+    }
+}
 .chart__container {
     padding: 50px 50px;
     width: 80%;
@@ -11,7 +28,6 @@
     border-radius: 5px;
     h2 {
         font-size: 1.2rem;
-        margin-bottom: 50px;
         color: $color-gray;
     }
 }

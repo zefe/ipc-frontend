@@ -156,7 +156,8 @@ export const startChecking = () => {
 
                 dispatch( login({
                     uid: body.uid,
-                    name: body.name
+                    name: body.name,
+                    role: 'admin'
                 }))
 
             } 
